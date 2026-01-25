@@ -1,0 +1,37 @@
+/* --- JERARQUÍA DE TAMAÑOS EN LA SIDEBAR --- */
+
+/* Nivel 1: "Criminalidad Total" y "Ciberdelincuencia" */
+.sidebar-section-active > .sidebar-item-text,
+.sidebar-item-section > .sidebar-item-container > .sidebar-link {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+/* Nivel 2: "Presenciales" */
+.sidebar-item-section .sidebar-item-section > .sidebar-item-container > .sidebar-link {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Nivel 3: "Homicidio", "Lesiones", etc. */
+.sidebar-item-section .sidebar-item-section .sidebar-item-section > .sidebar-item-container > .sidebar-link {
+  font-size: 0.95rem;
+  font-weight: normal;
+}
+
+/* Nivel 4: Los archivos .qmd finales */
+.sidebar-navigation .nav-item .nav-link {
+  font-size: 0.85rem;
+}
+
+/* --- COLOR DE ENLACE VISITADO --- */
+
+/* Cambia el color solo de los enlaces que ya han sido clicados */
+.sidebar-navigation a:visited {
+  color: #85144b !important; /* Un tono granate/púrpura, cámbialo a tu gusto */
+}
+
+/* Opcional: Color cuando el ratón pasa por encima */
+.sidebar-navigation a:hover {
+  color: #007bff; 
+}

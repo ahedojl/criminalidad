@@ -1,0 +1,90 @@
+project:
+  type: website
+
+lang: es
+
+website:
+  #cookie-consent: true
+  page-navigation: true
+  
+  sidebar:
+    title: "Criminalidad"
+    style: "docked"
+    search: true
+    contents:
+      - section: "Criminalidad Total"
+        href: total.qmd
+        contents:
+          - section: "Presenciales"
+            href: presenciales.qmd
+            contents:
+            - section: "Homicidio y sus formas"
+              href: homicidio01.qmd
+              contents:
+              - homicidio02.qmd
+              - homicidio03.qmd
+              - homicidio04.qmd
+            - section: "Lesiones"
+              href: lesiones01.qmd
+              contents:
+              - lesiones02.qmd
+              - lesiones03.qmd
+              - lesiones04.qmd
+            - section: "Torturas y contra la integridad"
+              href: tortura01.qmd
+              contents:
+              - tortura02.qmd
+              - tortura03.qmd
+            - section: "Contra la libertad sexual (UE)"
+              href: sexual01.qmd
+              contents:
+              - sexual02.qmd
+              - sexual03.qmd
+            - section: "Contra el patrimonio y el orden socioeconómico"
+              href: patrimonio01.qmd
+              contents:
+              - patrimonio02.qmd
+              - section: "Robo con fuerza en las cosas"
+                href: patrimonio03.qmd
+                contents:
+                - section: "Robo en vivienda"
+                  href: patrimonio04.qmd
+                  contents:
+                    - patrimonio05.qmd
+                    - patrimonio06.qmd
+                - patrimonio07.qmd
+                - patrimonio08.qmd
+                - patrimonio09.qmd
+              - patrimonio10.qmd
+              - patrimonio11.qmd
+              - patrimonio12.qmd
+              - patrimonio13.qmd
+              - patrimonio14.qmd
+            - section: "Contra la seguridad colectiva"
+              href: seguridad01.qmd
+              contents:
+              - seguridad02.qmd
+              - seguridad03.qmd
+              - seguridad04.qmd
+          - section: "Ciberdelincuencia"
+            href: ciberdelincuencia.qmd
+            contents:
+            - ciberdelincuencia01.qmd
+            - ciberdelincuencia02.qmd
+            - ciberdelincuencia03.qmd
+            - ciberdelincuencia04.qmd
+            - ciberdelincuencia05.qmd
+            - ciberdelincuencia06.qmd
+            - ciberdelincuencia07.qmd
+
+format:
+  html:
+    light: flatly
+    theme: darkly
+    css: estilos.css
+    grid:
+      margin-width: 250px  
+    toc: true              
+    toc-location: right
+
+

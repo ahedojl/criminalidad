@@ -1,0 +1,524 @@
+---
+title: "Robo con fuerza en las cosas"
+---
+
+::: column-margin
+### José Luis Ahedo
+
+Licenciado en Psicología.
+
+Especialista en Criminología.
+
+Máster en Mediación.
+:::
+
+```{r, include=FALSE}
+library(ggplot2)
+library(readODS)
+library(tidyverse)
+library(kableExtra)
+library(knitr)
+library(DT)
+library(rsconnect)
+library(plotly)
+library(patchwork)
+library(bslib)
+library(bsicons)
+library(plotly)
+library(viridis)
+library(RColorBrewer)
+```
+
+```{r include=FALSE}
+#Dataframe
+
+tasa <- read_ods("~/Documentos/RStudio/Ertzaina/Datos/tasa.ods") %>%
+  mutate(round(across(3:46, ~ .x), 2))
+
+tasa_th <- tasa %>%
+  slice(1:3, 24:26)
+
+tasa_th_25 <- tasa_th %>%
+  filter(Fecha == 2025)
+
+tasa_th_24 <- tasa_th %>%
+  filter(Fecha == 2024)
+
+tasa_capitales <- tasa %>%
+  slice(5, 6, 9, 28, 29, 32)
+
+tasa_capitales_25 <- tasa_capitales %>%
+  filter(Fecha == 2025)
+
+tasa_capitales_24 <- tasa_capitales %>%
+  filter(Fecha == 2024)
+
+tasa_mun <- tasa %>%
+  slice(5:23, 28:46)
+
+tasa_mun_25 <- tasa_mun %>%
+  filter(Fecha == 2025)
+
+tasa_mun_24 <- tasa_mun %>%
+  filter(Fecha == 2024)
+
+#--------------------`Robo con fuerza en las cosas`-------------------------------
+
+tasa_th_patrimonio03 <- tasa_th %>%
+  select(1, 2, 19)
+
+tasa_th_patrimonio03_25 <- tasa_th_patrimonio03 %>%
+  filter(Fecha == 2025)
+
+tasa_th_patrimonio03_24 <- tasa_th_patrimonio03 %>%
+  filter(Fecha == 2024)
+
+tasa_capitales_patrimonio03 <- tasa_capitales %>%
+  select(1, 2, 19)
+
+tasa_capitales_patrimonio03_25 <- tasa_capitales_patrimonio03 %>%
+  filter(Fecha == 2025)
+
+tasa_capitales_patrimonio03_24 <- tasa_capitales_patrimonio03 %>%
+  filter(Fecha == 2024)
+
+tasa_mun_patrimonio03 <- tasa_mun %>%
+  select(1, 2, 19)
+
+tasa_mun_patrimonio03_25 <- tasa_mun_patrimonio03 %>%
+  filter(Fecha == 2025)
+
+tasa_mun_patrimonio03_24 <- tasa_mun_patrimonio03 %>%
+  filter(Fecha == 2024)
+
+# Variacion
+
+variacion <- read_ods("~/Documentos/RStudio/Ertzaina/Datos/variacion.ods") %>%
+  mutate(round(across(2:45, ~ .x), 2))
+
+variacion_th <- variacion %>%
+  slice(1:3)
+
+variacion_capitales <- variacion %>%
+  slice(5, 6, 9)
+
+variacion_mun <- variacion %>%
+  slice(5:23)
+
+variacion_th_patrimonio03 <- variacion_th %>%
+  select(1, 18)
+
+variacion_capitales_patrimonio03 <- variacion_capitales %>%
+  select(1, 18)
+
+variacion_mun_patrimonio03 <- variacion_mun %>%
+  select(1, 18)
+```
+
+```{r include=FALSE}
+# Gráficos
+# TH
+
+graf_tasa_th_patrimonio03_24 <- ggplot(data = tasa_th_patrimonio03_24) +
+  geom_col(mapping = aes(x = reorder(Lugar,
+                                     - `Robo con fuerza en las cosas`
+                                     ),
+                         y = `Robo con fuerza en las cosas`,
+                         fill = Lugar,
+                         color = "black"
+                         ),
+           show.legend = FALSE
+           ) +
+  labs(x = "Lugar",
+       y = "Criminalidad `Robo con fuerza en las cosas`"
+       #title = "Criminalidad `Robo con fuerza en las cosas`\n2024"
+       ) +
+ # scale_fill_gradient(low = "yellow", high = "darkred") +
+  geom_label(aes(x = Lugar,
+                 y = `Robo con fuerza en las cosas`,
+                 label = `Robo con fuerza en las cosas`
+                 ),
+             size = 5,
+            vjust = 0.5
+            ) +
+  theme(plot.title = element_text(hjust = 0.5,
+                                  color = "black",
+                                  size = 14,
+                                  face = "bold"
+                                  ),
+        axis.text.x = element_text(#angle = 45,
+                                 color = "black", 
+                                 size = 15,
+                                 vjust = 0.5,
+                                 hjust = 0.5,
+                                 face = "bold"
+                                 ),
+        axis.title = element_blank()
+        )
+
+graf_tasa_th_patrimonio03_25 <- ggplot(data = tasa_th_patrimonio03_25) +
+  geom_col(mapping = aes(x = reorder(Lugar,
+                                     - `Robo con fuerza en las cosas`
+                                     ),
+                         y = `Robo con fuerza en las cosas`,
+                         fill = Lugar,
+                         color = "black"
+                         ),
+           show.legend = FALSE
+           ) +
+  labs(x = "Lugar",
+       y = "Criminalidad `Robo con fuerza en las cosas`"
+       #title = "Criminalidad `Robo con fuerza en las cosas`\n2025"
+       ) +
+ # scale_fill_gradient(low = "yellow", high = "darkred") +
+  geom_label(aes(x = Lugar,
+                 y = `Robo con fuerza en las cosas`,
+                 label = `Robo con fuerza en las cosas`
+                 ),
+             size = 5,
+            vjust = 0.5
+            ) +
+  theme(plot.title = element_text(hjust = 0.5,
+                                  color = "black",
+                                  size = 14,
+                                  face = "bold"
+                                  ),
+        axis.text.x = element_text(#angle = 45,
+                                 color = "black", 
+                                 size = 15,
+                                 vjust = 0.5,
+                                 hjust = 0.5,
+                                 face = "bold"
+                                 ),
+        axis.title = element_blank()
+        )
+
+# Variación
+graf_variacion_th_patrimonio03 <- ggplot(data = variacion_th_patrimonio03) +
+  geom_col(mapping = aes(x = reorder(Lugar,
+                                     - `Robo con fuerza en las cosas`
+                                     ),
+                         y = `Robo con fuerza en las cosas`,
+                         fill = Lugar,
+                         color = "black"
+                         ),
+           show.legend = FALSE
+           ) +
+  labs(x = "Lugar",
+       y = "Criminalidad `Robo con fuerza en las cosas`"
+       #title = "Criminalidad `Robo con fuerza en las cosas` - Variación 24-25"
+       ) +
+ # scale_fill_gradient(low = "yellow", high = "darkred") +
+  geom_label(aes(x = Lugar,
+                 y = `Robo con fuerza en las cosas`,
+                 label = paste0(`Robo con fuerza en las cosas`,"%")
+                 ),
+             size = 5,
+            vjust = 0.5
+            ) +
+  theme(plot.title = element_text(hjust = 0.5,
+                                  color = "black",
+                                  size = 14,
+                                  face = "bold"
+                                  ),
+        axis.text.x = element_text(#angle = 45,
+                                 color = "black", 
+                                 size = 15,
+                                 vjust = 0.5,
+                                 hjust = 0.5,
+                                 face = "bold"
+                                 ),
+        axis.title = element_blank()
+        )
+
+# capitales
+
+graf_tasa_capitales_patrimonio03_24 <- ggplot(data = tasa_capitales_patrimonio03_24, 
+       mapping = aes(x = reorder(Lugar, -`Robo con fuerza en las cosas`), y = `Robo con fuerza en las cosas`, fill = Lugar)) +
+  geom_col(show.legend = FALSE) +
+  scale_fill_manual(values = c(
+    "Vitoria-Gasteiz" = "purple", 
+    "Donostia / San Sebastián" = "orange", 
+    "Bilbao" = "darkgreen"
+  )) +
+  geom_label(aes(label = `Robo con fuerza en las cosas`), 
+             fill = "white",
+             color = "black",
+             size = 5, 
+             vjust = 0.5,
+             show.legend = FALSE
+             ) +
+  labs(x = "Lugar", y = "Criminalidad `Robo con fuerza en las cosas`") +
+  theme_light() +
+  theme(
+    plot.title = element_text(hjust = 0.5, color = "black", size = 14, face = "bold"),
+    axis.text.x = element_text(color = "black", size = 15, vjust = 0.5, hjust = 0.5, face = "bold"),
+    axis.title = element_blank(),
+    legend.position = "none"
+  )
+
+graf_tasa_capitales_patrimonio03_25 <- ggplot(data = tasa_capitales_patrimonio03_25, 
+       mapping = aes(x = reorder(Lugar, -`Robo con fuerza en las cosas`), y = `Robo con fuerza en las cosas`, fill = Lugar)) +
+  geom_col(show.legend = FALSE) +
+  scale_fill_manual(values = c(
+    "Vitoria-Gasteiz" = "purple", 
+    "Donostia / San Sebastián" = "orange", 
+    "Bilbao" = "darkgreen"
+  )) +
+  geom_label(aes(label = `Robo con fuerza en las cosas`), 
+             fill = "white",
+             color = "black",
+             size = 5, 
+             vjust = 0.5,
+             show.legend = FALSE
+             ) +
+  labs(x = "Lugar", y = "Criminalidad `Robo con fuerza en las cosas`") +
+  theme_light() +
+  theme(
+    plot.title = element_text(hjust = 0.5, color = "black", size = 14, face = "bold"),
+    axis.text.x = element_text(color = "black", size = 15, vjust = 0.5, hjust = 0.5, face = "bold"),
+    axis.title = element_blank(),
+    legend.position = "none"
+  )
+
+# Variación
+graf_variacion_capitales_patrimonio03 <- ggplot(data = variacion_capitales_patrimonio03, 
+       mapping = aes(x = reorder(Lugar, -`Robo con fuerza en las cosas`), y = `Robo con fuerza en las cosas`, fill = Lugar)) +
+  geom_col(show.legend = FALSE) +
+  scale_fill_manual(values = c(
+    "Vitoria-Gasteiz" = "purple", 
+    "Donostia / San Sebastián" = "orange", 
+    "Bilbao" = "darkgreen"
+  )) +
+  geom_label(aes(label = paste0(`Robo con fuerza en las cosas`,"%")), 
+             fill = "white",
+             color = "black",
+             size = 5, 
+             vjust = 0.5,
+             show.legend = FALSE
+             ) +
+  labs(x = "Lugar", y = "Criminalidad `Robo con fuerza en las cosas`") +
+  theme_light() +
+  theme(
+    plot.title = element_text(hjust = 0.5, color = "black", size = 14, face = "bold"),
+    axis.text.x = element_text(color = "black", size = 15, vjust = 0.5, hjust = 0.5, face = "bold"),
+    axis.title = element_blank(),
+    legend.position = "none"
+  ) 
+
+# Municipios
+mun <- unique(c(tasa_mun_patrimonio03_24$Lugar, tasa_mun_patrimonio03_25$Lugar, variacion_mun_patrimonio03 ))
+
+getPalette = colorRampPalette(brewer.pal(12, "Set3"))
+mun_col = getPalette(length(mun))
+
+names(mun_col) <- mun
+
+graf_tasa_mun_patrimonio03_24 <-  ggplot(data = tasa_mun_patrimonio03_24) +
+  geom_col(mapping = aes(x = reorder(Lugar,
+                                     `Robo con fuerza en las cosas`
+                                     ),
+                         y = `Robo con fuerza en las cosas`,
+                         fill = Lugar
+                         ),
+           color = "black",
+           show.legend = FALSE
+  ) +
+  scale_fill_manual(values = mun_col) +
+  labs(x = "Lugar",
+       y = "Criminalidad `Robo con fuerza en las cosas`",
+       #title = "Criminalidad `Robo con fuerza en las cosas` 2025 - Tasa"
+  ) +
+  coord_flip() +
+  geom_label(aes(x = Lugar,
+                 y = `Robo con fuerza en las cosas`,
+                 label =  `Robo con fuerza en las cosas`
+                 ),
+             size = 5,
+             vjust = 0.5,
+             hjust = 1
+             ) +
+  theme(plot.title = element_text(hjust = 0.5,
+                                  color = "darkblue",
+                                  size = 30,
+                                  face = "bold"
+  ),
+  axis.text.x = element_blank(),
+  axis.text.y = element_text(#angle = 45,
+    color = "black", 
+    size = 10,
+    vjust = 0.5,
+    hjust = 1,
+    #face = "bold"
+    ),
+  axis.title = element_blank()
+  )
+
+graf_tasa_mun_patrimonio03_25 <-  ggplot(data = tasa_mun_patrimonio03_25) +
+  geom_col(mapping = aes(x = reorder(Lugar,
+                                     `Robo con fuerza en las cosas`
+                                     ),
+                         y = `Robo con fuerza en las cosas`,
+                         fill = Lugar
+                         ),
+           color = "black",
+           show.legend = FALSE
+  ) +
+  scale_fill_manual(values = mun_col) +
+  labs(x = "Lugar",
+       y = "Criminalidad `Robo con fuerza en las cosas`",
+       #title = "Criminalidad `Robo con fuerza en las cosas` 2025 - Tasa"
+  ) +
+  coord_flip() +
+  geom_label(aes(x = Lugar,
+                 y = `Robo con fuerza en las cosas`,
+                 label =  `Robo con fuerza en las cosas`
+                 ),
+             size = 5,
+             vjust = 0.5,
+             hjust = 1
+             ) +
+  theme(plot.title = element_text(hjust = 0.5,
+                                  color = "darkblue",
+                                  size = 30,
+                                  face = "bold"
+  ),
+  axis.text.x = element_blank(),
+  axis.text.y = element_text(#angle = 45,
+    color = "black", 
+    size = 10,
+    vjust = 0.5,
+    hjust = 1,
+    #face = "bold"
+    ),
+  axis.title = element_blank()
+  )
+
+graf_variacion_mun_patrimonio03 <-  ggplot(data = variacion_mun_patrimonio03) +
+  geom_col(mapping = aes(x = reorder(Lugar,
+                                     `Robo con fuerza en las cosas`
+                                     ),
+                         y = `Robo con fuerza en las cosas`,
+                         fill = Lugar
+                         ),
+           color = "black",
+           show.legend = FALSE
+  ) +
+  scale_fill_manual(values = mun_col) +
+  labs(x = "Lugar",
+       y = "Criminalidad `Robo con fuerza en las cosas`",
+       #title = "Criminalidad `Robo con fuerza en las cosas` 2025 - Tasa"
+  ) +
+  coord_flip() +
+  geom_label(aes(x = Lugar,
+                 y = `Robo con fuerza en las cosas`,
+                 label =  paste0(`Robo con fuerza en las cosas`,"%")
+                 ),
+             size = 5,
+             vjust = 0.5,
+             hjust = 0.5
+             ) +
+  theme(plot.title = element_text(hjust = 0.5,
+                                  color = "darkblue",
+                                  size = 30,
+                                  face = "bold"
+  ),
+  axis.text.x = element_blank(),
+  axis.text.y = element_text(#angle = 45,
+    color = "black", 
+    size = 10,
+    vjust = 0.5,
+    hjust = 1,
+    face = "bold"
+    ),
+  axis.title = element_blank()
+  )
+```
+
+## Territorios Históricos
+
+### Tasa de delitos por cada 1000 hab.
+
+```{r}
+#| label: fig-graf_tasa_th_patrimonio03
+#| echo: false
+#| fig-cap: Tasa `Robo con fuerza en las cosas` en los TTHH.
+#| fig-subcap: 
+#|    - "Año 2024"
+#|    - "Año 2025"
+#| layout-ncol: 2
+
+graf_tasa_th_patrimonio03_24
+graf_tasa_th_patrimonio03_25
+```
+
+## Variación año 24-25
+
+```{r}
+#| label: fig-graf_variacion_th_patrimonio03
+#| echo: false
+#| fig-cap: Variación `Robo con fuerza en las cosas` en los TTHH.
+
+graf_variacion_th_patrimonio03
+```
+
+## Capitales Vascas
+
+### Tasa de delitos por cada 1000 hab.
+
+```{r}
+#| label: fig-graf_tasa_capitales_patrimonio03
+#| echo: false
+#| fig-cap: Tasa `Robo con fuerza en las cosas` en las capitales vascas.
+#| fig-subcap: 
+#|    - "Año 2024"
+#|    - "Año 2025"
+#| layout-ncol: 2
+
+graf_tasa_capitales_patrimonio03_24
+graf_tasa_capitales_patrimonio03_25
+```
+
+## Variación año 24-25
+
+```{r}
+#| label: fig-graf_variacion_capitales_patrimonio03
+#| echo: false
+#| fig-cap: Variación `Robo con fuerza en las cosas` en las capitales vascas.
+
+graf_variacion_capitales_patrimonio03
+```
+
+## MUNICIPIOS
+
+### Tasa de delitos por cada 1000 hab.
+
+```{r}
+#| label: fig-graf_tasa_mun_patrimonio03
+#| echo: false
+#| fig-cap: Tasa `Robo con fuerza en las cosas` en los municipios vascos.
+#| fig-subcap: 
+#|    - "Año 2024"
+#|    - "Año 2025"
+#| layout-ncol: 2
+#| fig-height: 8
+
+graf_tasa_mun_patrimonio03_24
+graf_tasa_mun_patrimonio03_25
+```
+
+## Variación año 24-25
+
+```{r}
+#| label: fig-graf_variacion_mun_patrimonio03
+#| echo: false
+#| fig-cap: Variación `Robo con fuerza en las cosas` en los municipios vascos.
+#| fig-height: 12
+#| fig-width: 12
+
+graf_variacion_mun_patrimonio03
+```
+
+::: callout-note
+Fuente: Gobierno Vasco. Ertzaintza.
+:::
