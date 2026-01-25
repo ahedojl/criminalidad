@@ -17,6 +17,7 @@ library(bsicons)
 library(plotly)
 library(viridis)
 library(RColorBrewer)
+library(usethis)
 ```
 
 ::: column-margin
