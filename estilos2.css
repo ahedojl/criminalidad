@@ -1,0 +1,11 @@
+/* --- COLOR DE ENLACE VISITADO --- */
+
+/* Cambia el color solo de los enlaces que ya han sido clicados */
+.sidebar-navigation a:visited {
+  color: #85144b !important; /* Un tono granate/púrpura, cámbialo a tu gusto */
+}
+
+/* Opcional: Color cuando el ratón pasa por encima */
+.sidebar-navigation a:hover {
+  color: #007bff; 
+}
