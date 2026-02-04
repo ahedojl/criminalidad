@@ -1718,6 +1718,107 @@
     ]
   },
   {
+    "objectID": "mapa_mun.html",
+    "href": "mapa_mun.html",
+    "title": "Criminalidad en los municipios de Euskadi",
+    "section": "",
+    "text": "José Luis Ahedo\nLicenciado en Psicología.\nEspecialista en Criminología.\nMáster en Mediación.\n\n\n\n\n\n\nImportante\n\n\n\nDelitos totales conocidos por la Ertzaintza, pero en los municipios de más de 15.000 habitantes se suman los conocidos por las Policías Locales.\n\n\nTasa de delitos por cada 1000 habitantes en los municipios de Euskadi\n\n\n\n\n\n\nVariación de la criminalidad",
+    "crumbs": [
+      "Mapa de criminalidad en los municpios de Euskadi"
+    ]
+  },
+  {
+    "objectID": "lesiones03.html",
+    "href": "lesiones03.html",
+    "title": "Lesiones (específico)",
+    "section": "",
+    "text": "Licenciado en Psicología.\nEspecialista en Criminología.\nMáster en Mediación.",
+    "crumbs": [
+      "Criminalidad Total",
+      "Presenciales",
+      "Lesiones",
+      "Lesiones (específico)"
+    ]
+  },
+  {
+    "objectID": "lesiones03.html#territorios-históricos",
+    "href": "lesiones03.html#territorios-históricos",
+    "title": "Lesiones (específico)",
+    "section": "Territorios Históricos",
+    "text": "Territorios Históricos\n\nTasa de delitos por cada 1000 hab.\n\n\n\n\n\n\n\n\n\n\n\n(a) Año 2024\n\n\n\n\n\n\n\n\n\n\n\n(b) Año 2025\n\n\n\n\n\n\n\nFigura 1: Tasa de Otras lesiones en los TTHH.",
+    "crumbs": [
+      "Criminalidad Total",
+      "Presenciales",
+      "Lesiones",
+      "Lesiones (específico)"
+    ]
+  },
+  {
+    "objectID": "lesiones03.html#variación-año-24-25",
+    "href": "lesiones03.html#variación-año-24-25",
+    "title": "Lesiones (específico)",
+    "section": "Variación año 24-25",
+    "text": "Variación año 24-25\n\n\n\n\n\n\n\n\nFigura 2: Variación de Otras lesiones en los TTHH.",
+    "crumbs": [
+      "Criminalidad Total",
+      "Presenciales",
+      "Lesiones",
+      "Lesiones (específico)"
+    ]
+  },
+  {
+    "objectID": "lesiones03.html#capitales-vascas",
+    "href": "lesiones03.html#capitales-vascas",
+    "title": "Lesiones (específico)",
+    "section": "Capitales Vascas",
+    "text": "Capitales Vascas\n\nTasa de delitos por cada 1000 hab.\n\n\n\n\n\n\n\n\n\n\n\n(a) Año 2024\n\n\n\n\n\n\n\n\n\n\n\n(b) Año 2025\n\n\n\n\n\n\n\nFigura 3: Tasa de Otras lesiones en las capitales vascas.",
+    "crumbs": [
+      "Criminalidad Total",
+      "Presenciales",
+      "Lesiones",
+      "Lesiones (específico)"
+    ]
+  },
+  {
+    "objectID": "lesiones03.html#variación-año-24-25-1",
+    "href": "lesiones03.html#variación-año-24-25-1",
+    "title": "Lesiones (específico)",
+    "section": "Variación año 24-25",
+    "text": "Variación año 24-25\n\n\n\n\n\n\n\n\nFigura 4: Variación de Otras lesiones en las capitales vascas.",
+    "crumbs": [
+      "Criminalidad Total",
+      "Presenciales",
+      "Lesiones",
+      "Lesiones (específico)"
+    ]
+  },
+  {
+    "objectID": "lesiones03.html#municipios",
+    "href": "lesiones03.html#municipios",
+    "title": "Lesiones (específico)",
+    "section": "MUNICIPIOS",
+    "text": "MUNICIPIOS\n\nTasa de delitos por cada 1000 hab.\n\n\n\n\n\n\n\n\n\n\n\n(a) Año 2024\n\n\n\n\n\n\n\n\n\n\n\n(b) Año 2025\n\n\n\n\n\n\n\nFigura 5: Tasa de Otras lesiones en los municipios vascos.",
+    "crumbs": [
+      "Criminalidad Total",
+      "Presenciales",
+      "Lesiones",
+      "Lesiones (específico)"
+    ]
+  },
+  {
+    "objectID": "lesiones03.html#variación-año-24-25-2",
+    "href": "lesiones03.html#variación-año-24-25-2",
+    "title": "Lesiones (específico)",
+    "section": "Variación año 24-25",
+    "text": "Variación año 24-25\n\n\n\n\n\n\n\n\nFigura 6: Variación de Otras lesiones en los municipios vascos.\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nFuente: Gobierno Vasco. Ertzaintza.",
+    "crumbs": [
+      "Criminalidad Total",
+      "Presenciales",
+      "Lesiones",
+      "Lesiones (específico)"
+    ]
+  },
+  {
     "objectID": "patrimonio09.html",
     "href": "patrimonio09.html",
     "title": "Robo con fuerza en otros lugares",
@@ -1813,97 +1914,6 @@
       "Contra el patrimonio y el orden socioeconómico",
       "Robo con fuerza en las cosas",
       "Robo con fuerza en otros lugares"
-    ]
-  },
-  {
-    "objectID": "lesiones03.html",
-    "href": "lesiones03.html",
-    "title": "Lesiones (específico)",
-    "section": "",
-    "text": "Licenciado en Psicología.\nEspecialista en Criminología.\nMáster en Mediación.",
-    "crumbs": [
-      "Criminalidad Total",
-      "Presenciales",
-      "Lesiones",
-      "Lesiones (específico)"
-    ]
-  },
-  {
-    "objectID": "lesiones03.html#territorios-históricos",
-    "href": "lesiones03.html#territorios-históricos",
-    "title": "Lesiones (específico)",
-    "section": "Territorios Históricos",
-    "text": "Territorios Históricos\n\nTasa de delitos por cada 1000 hab.\n\n\n\n\n\n\n\n\n\n\n\n(a) Año 2024\n\n\n\n\n\n\n\n\n\n\n\n(b) Año 2025\n\n\n\n\n\n\n\nFigura 1: Tasa de Otras lesiones en los TTHH.",
-    "crumbs": [
-      "Criminalidad Total",
-      "Presenciales",
-      "Lesiones",
-      "Lesiones (específico)"
-    ]
-  },
-  {
-    "objectID": "lesiones03.html#variación-año-24-25",
-    "href": "lesiones03.html#variación-año-24-25",
-    "title": "Lesiones (específico)",
-    "section": "Variación año 24-25",
-    "text": "Variación año 24-25\n\n\n\n\n\n\n\n\nFigura 2: Variación de Otras lesiones en los TTHH.",
-    "crumbs": [
-      "Criminalidad Total",
-      "Presenciales",
-      "Lesiones",
-      "Lesiones (específico)"
-    ]
-  },
-  {
-    "objectID": "lesiones03.html#capitales-vascas",
-    "href": "lesiones03.html#capitales-vascas",
-    "title": "Lesiones (específico)",
-    "section": "Capitales Vascas",
-    "text": "Capitales Vascas\n\nTasa de delitos por cada 1000 hab.\n\n\n\n\n\n\n\n\n\n\n\n(a) Año 2024\n\n\n\n\n\n\n\n\n\n\n\n(b) Año 2025\n\n\n\n\n\n\n\nFigura 3: Tasa de Otras lesiones en las capitales vascas.",
-    "crumbs": [
-      "Criminalidad Total",
-      "Presenciales",
-      "Lesiones",
-      "Lesiones (específico)"
-    ]
-  },
-  {
-    "objectID": "lesiones03.html#variación-año-24-25-1",
-    "href": "lesiones03.html#variación-año-24-25-1",
-    "title": "Lesiones (específico)",
-    "section": "Variación año 24-25",
-    "text": "Variación año 24-25\n\n\n\n\n\n\n\n\nFigura 4: Variación de Otras lesiones en las capitales vascas.",
-    "crumbs": [
-      "Criminalidad Total",
-      "Presenciales",
-      "Lesiones",
-      "Lesiones (específico)"
-    ]
-  },
-  {
-    "objectID": "lesiones03.html#municipios",
-    "href": "lesiones03.html#municipios",
-    "title": "Lesiones (específico)",
-    "section": "MUNICIPIOS",
-    "text": "MUNICIPIOS\n\nTasa de delitos por cada 1000 hab.\n\n\n\n\n\n\n\n\n\n\n\n(a) Año 2024\n\n\n\n\n\n\n\n\n\n\n\n(b) Año 2025\n\n\n\n\n\n\n\nFigura 5: Tasa de Otras lesiones en los municipios vascos.",
-    "crumbs": [
-      "Criminalidad Total",
-      "Presenciales",
-      "Lesiones",
-      "Lesiones (específico)"
-    ]
-  },
-  {
-    "objectID": "lesiones03.html#variación-año-24-25-2",
-    "href": "lesiones03.html#variación-año-24-25-2",
-    "title": "Lesiones (específico)",
-    "section": "Variación año 24-25",
-    "text": "Variación año 24-25\n\n\n\n\n\n\n\n\nFigura 6: Variación de Otras lesiones en los municipios vascos.\n\n\n\n\n\n\n\n\n\n\n\nNota\n\n\n\nFuente: Gobierno Vasco. Ertzaintza.",
-    "crumbs": [
-      "Criminalidad Total",
-      "Presenciales",
-      "Lesiones",
-      "Lesiones (específico)"
     ]
   },
   {
